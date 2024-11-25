@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Maven+Pro:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./sasFile/style.css">
+    <title>Metbee</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <section class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="./imgs/logo1.png" alt="">
+            </div>
+            <div class="search_box">
+                <input class="inp_search" id="searchInput" type="text" placeholder="Axtarış...">
+
+            </div>
+            <div class="icons">
+                <img onclick="basketShowHide()" src="./imgs/shopping-bag.png" alt="">
+                <span class="produc_num">0</span>
+                <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+            </div>
+        </header>
+
+        <section class="search_result" id="searchResult">
+
+        </section>
+
+        <nav class="navbar">
+            <a href="">Əsas səhifə</a>
+            <a href="">Haqqımızda</a>
+            <a href="">Ünvan</a>
+            <a href="">Əlaqə</a>
+        </nav>
+
+        <section class="slider_box">
+            <img id="sliderImage" src="./imgs/FotoSLIDE1.jpg" alt="Slider Image">
+            <div class="controls">
+                <i class="fa-solid fa-chevron-left" id="prevButton"></i>
+                <i class="fa-solid fa-chevron-right" id="nextButton"></i>
+            </div>
+        </section>
+
+        <section class="category">
+            <button data-category="Vergi xidməti">Vergi xidməti</button>
+            <button data-category="Mühasibat xidməti">Mühasibat xidməti</button>
+            <button data-category="Mətbəə və poliqrafiya">Mətbəə və poliqrafiya</button>
+            <button data-category="Boşdur">Boşdur</button>
+        </section>
+
+        <div class="product-container" id="productContainer">
+
+        </div>
+
+        <section class="basket_card_box">
+            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: black;"></i>
+            <section class="product_box">
+            </section>
+            <img class="card_pen" src="./imgs/pen.png" alt="pen">
+        </section>
+
+    </section>
+
+    <script src="./index.js">
+
+    </script>
+
+</body>
+
+</html>
