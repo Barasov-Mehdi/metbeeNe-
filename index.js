@@ -129,8 +129,7 @@ function displaySearchResults(searchResults) {
     searchResults.forEach((product) => {
         const searchDiv = document.createElement('div');
         searchDiv.innerHTML = `
-            <h4>${product.name}</h4>
-            <button class="view-product" data-product='${JSON.stringify(product)}'>Görüntüle</button>
+            <h4 class="view-product" data-product='${JSON.stringify(product)}'>${product.name}</h4>
         `;
         searchResult.appendChild(searchDiv);
     });
@@ -228,8 +227,6 @@ function sendWhatsAppMessage() {
     window.open(whatsappUrl, '_blank'); // Yeni sekmede WhatsApp aç
 }
 
-
-
 // Sepetten çıkarma işlemi
 function removeFromCart(productId) {
     const existingProductIndex = cart.findIndex(item => item._id === productId);
@@ -241,8 +238,6 @@ function removeFromCart(productId) {
         displayCart();
     }
 }
-
-// Sayfayı ilk yüklediğimizde tüm ürünleri al
 fetchProducts();
 
 var basket_card_box = document.querySelector(".basket_card_box");
@@ -262,3 +257,4 @@ function basketShowHide() {
         basket_card_box.style.display = 'flex'
     }
 }
+

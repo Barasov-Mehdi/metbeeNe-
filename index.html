@@ -21,9 +21,81 @@
     <title>Metbee</title>
 </head>
 
-<style>
+<!-- <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
 
-</style>
+    .slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        height: 300px;
+        /* Slider yüksekliği */
+    }
+
+    .slider-wrapper {
+        display: flex;
+        animation: scroll 18s linear infinite;
+        /* Otomatik kaydırma */
+    }
+
+    .slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        /* Resim boyutu */
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        16.66% {
+            transform: translateX(0);
+        }
+
+        33.33% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(-100%);
+        }
+
+        66.66% {
+            transform: translateX(-200%);
+        }
+
+        83.33% {
+            transform: translateX(-200%);
+        }
+
+        100% {
+            transform: translateX(-300%);
+        }
+    }
+</style> -->
 
 <body>
     <section class="container">
@@ -61,6 +133,35 @@
             </div>
         </section>
 
+        <section class="slider">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <img src="./imgs/7MzntefWuk7CpmGQArDIw6JuLiIzVvkIjJgbTtVL.svg" alt="Image 2">
+                    <p class="caption">Elektron bəyannamənin qəbulu</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/1kF657OhBySFv4RRIZA17AzCNTXwGYoFPXMaaMNo.svg" alt="Image 1">
+                    <p class="caption">Kommersiya hüquqi şəxslərin onlayn qeydiyyatı</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
+                    <p class="caption">Bəyannamə, ərizə formaları, arayış, hesabat və qərarlar</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/e20W8OSvnEDESjpzGfdF3SuVn5fzRPERQcmm939t.svg" alt="Image 4">
+                    <p class="caption">Fiziki şəxslərin vergi uçotuna alınması</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/jtsEdzk4iE3FKdihFD0NJR1zu26IUtRLhSwIa3RB.svg" alt="Image 5">
+                    <p class="caption">Hazır sənəd barədə məlumatın verilməsi</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/Nh6A8H0tHOtXbEC3doSmCbRy2aLAz5I4Ke7rWPSD.svg" alt="Image 6">
+                    <p class="caption">Riskli vergi ödəyiciləri barədə məlumatın verilməsi</p>
+                </div>
+            </div>
+        </section>
+
         <section class="category">
             <button data-category="Vergi xidməti">Vergi xidməti</button>
             <button data-category="Mühasibat xidməti">Mühasibat xidməti</button>
@@ -79,12 +180,99 @@
             <img class="card_pen" src="./imgs/pen.png" alt="pen">
         </section>
 
+        <footer class="footer">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.1934743956526!2d46.64161897521988!3d41.62994928091586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40464b03acda7711%3A0xea9b7613221da395!2sBazar%20Store!5e0!3m2!1str!2saz!4v1732646905880!5m2!1str!2saz"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <section class="footer_info">
+                <span>Created by BarasSoftWare</span>
+            </section>
+        </footer>
+
+
+        <section class="mb_footer">
+            <i class="fa-solid fa-bars open_mbBox"></i>
+            <i class="fa-regular fa-comment"></i>
+            <!-- <i class="fa-brands fa-whatsapp"></i> -->
+            <button id="toggleButton"><i class="fa-solid fa-share-nodes"></i></button>
+
+        </section>
+
+        <section class="menu_box">
+            <div class="cancel_mb">
+                <i class="fa-solid fa-xmark close_mbBox"></i>
+            </div>
+
+        </section>
+
+        <div class="icon-box" id="iconBox">
+            <!-- <a href="https://www.instagram.com" target="_blank" class="icon instagram">📷</a> -->
+            <!-- <a href="https://wa.me" target="_blank" class="icon whatsapp">💬</a> -->
+            <!-- <a href="https://www.example.com/message" target="_blank" class="icon message">✉️</a> -->
+            <i class="fa-brands fa-instagram icon"></i>
+            <i class="fa-brands fa-whatsapp icon"></i>
+            <i class="fa-regular fa-map icon"></i>
+            <i class="fa-solid fa-phone-flip icon"></i>
+
+        </div>
+
+
+
+
     </section>
 
-    <script src="./index.js">
+    <script src="./index.js"></script>
+    <script>
+        var open_mbBox = document.querySelector('.open_mbBox');
+        var close_mbBox = document.querySelector('.close_mbBox');
+        var menu_box = document.querySelector('.menu_box');
+        var container = document.querySelector('.container');
+
+        let currentIndex = 0;
+
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides; // Sonraki slide'ı göster
+            const offset = -currentIndex * 100; // Kaydırma miktarı
+            document.querySelector('.slider-wrapper').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Her 3 saniyede bir slide'ı değiştir
+        setInterval(showNextSlide, 3000);
+
+        close_mbBox.addEventListener('click', () => {
+            menu_box.style.display = 'none';
+            container.style.overflowY = 'auto';
+
+        });
+
+        open_mbBox.addEventListener('click', () => {
+            menu_box.style.display = 'flex';
+            container.style.overflowY = 'hidden';
+
+        });
+
+        document.getElementById('toggleButton').addEventListener('click', function () {
+            const icons = document.querySelectorAll('.icon');
+
+            // İkonların var olup olmadığını kontrol edip sınıfları değiştiriyoruz
+            if (icons[0].classList.contains('show')) {
+                icons.forEach(icon => {
+                    icon.classList.remove('show');
+                });
+            } else {
+                icons.forEach((icon, index) => {
+                    setTimeout(() => {
+                        icon.classList.add('show');
+                    }, index * 200); // Her bir ikonun gösterimini geciktirir
+                });
+            }
+        });
 
     </script>
-
 </body>
 
 </html>
