@@ -349,7 +349,7 @@
 }
 
 .container .footer iframe {
-  width: 100%;
+  width: 80%;
   height: 200px;
 }
 
@@ -379,7 +379,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
   z-index: 1;
 
 
@@ -389,9 +389,29 @@
   font-size: 23px;
   color: white;
   padding: 5px;
-
-
 }
+
+.container .mb_footer section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.container .mb_footer section i {
+  top: -150px;
+  font-size: 25px;
+  color: black;
+  background-color: white;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  border: 0.5px solid forestgreen;
+}
+
+
 
 .container .menu_box {
   display: none;
@@ -518,7 +538,7 @@
 }
 .slide img {
   width: 100%; 
-  height: 100px; /* Resim boyutu */
+  height: 75px; /* Resim boyutu */
   object-fit: contain;
 }
 .caption {
@@ -529,6 +549,7 @@
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+  font-size: 15px;
 }
 @keyframes scroll {
   0% { transform: translateX(0); }
@@ -590,6 +611,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 5px;
     width: 170px;
+    margin-top: 15px;
   }
 
   .container .product-container .product .product_name h2 {
