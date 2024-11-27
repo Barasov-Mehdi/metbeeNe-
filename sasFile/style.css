@@ -73,13 +73,10 @@
 .container .navbar {
   width: 100%;
   height: auto;
-  /* background-color: #005c99; */
-  /* birinci goy asagi */
-  /* background-color: #3f6487; */
-  /* background-color: #323431; */
-  background-color: #005b99;
   display: flex;
   justify-content: space-evenly;
+  background-color: #021526;
+  /* background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%); */
 }
 
 .container .navbar a {
@@ -106,18 +103,19 @@
   text-align: center;
   cursor: pointer;
   padding: 10px 10px;
-  background-color: #ecebeb;
+  background-color: #f6f4d2;
   color: black;
   border: none;
   border-radius: 4px;
   margin-left: 30px;
   font-family: "Maven Pro", sans-serif;
   font-style: normal;
+  font-weight: bold;
 }
 
 .container .category button:hover {
   background-color: #0056b3;
-  color: white;
+  color: black;
 }
 
 .container .slider_box {
@@ -232,22 +230,33 @@
 
 .container .product-container .product .add-to-cart {
   /* background-color: #44688a; */
-  background-color: #005b99;
+  /* background-color: #005b99; */
   /* background-color: #323431; */
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 5px 5px;
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
   margin: 5px;
+  text-align: end;
+}
+
+.addBox {
+  display: flex;
   width: 100%;
-  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h6 {
+  font-weight: 200;
+  font-size: 13px;
 }
 
 .container .product-container .product .add-to-cart:hover {
-  background-color: #218838;
+  font-size: 1.2em;
 }
 
 .container .basket_card_box {
@@ -342,8 +351,7 @@
 
 .container .footer {
   width: 100%;
-  /* background-color: #323431; */
-  background-color: #3a3d34;
+  background-color: #021526;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -373,50 +381,50 @@
 }
 
 .container .mb_footer {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: auto;
   padding: 10px 15px;
-  background-color: #005b99;
-  /* background-color: #323431; */
+  /* background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+  background-blend-mode: multiply; */
+  /* background-color: #1E201E; */
+  background-color: #021526;
   position: fixed;
   bottom: 0;
   left: 0;
   /* border-top: 1px solid white; */
   z-index: 1;
-  border-radius: 10px;
+  border-radius: 3px;
 
 }
 
-.container .mb_footer i {
-  font-size: 23px;
-  color: white;
-  padding: 5px;
-  background-color: #005b99;
+.container .mb_footer img {
+  width: 33px;
+  height: 33px;
+  object-fit: cover;
+
 }
 
-.container .mb_footer section {
+/* .container .mb_footer section {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20px;
   height: 20px;
-}
+} */
 
-.container .mb_footer section i {
+/* .container .mb_footer section i {
   top: -180px;
   font-size: 25px;
-  color: #005b99;
-  background-color: white;
+  color: white;
   padding: 7px;
   margin-bottom: 10px;
   border-radius: 50px;
-  border: 3px solid #005b99;
   font-weight: 500;
-}
+} */
 
 .container .menu_box {
   display: none;
@@ -444,7 +452,7 @@
   width: 100%;
   text-align: end;
   padding: 5px;
-  background-color: #005b99;
+  background-color: #021526;
   /* background-color: #323431; */
   color: white;
   font-size: 20px;
@@ -543,7 +551,8 @@
   overflow: hidden;
   position: relative;
   /* height: 200px; Slider yüksekliği */
-  background-color: #ecebeb;
+  /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+  background-color: white;
 }
 
 .slider-wrapper {
@@ -616,38 +625,52 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: 300px; /* Sonuç bölümünün yüksekliğini sınırlamak için */
-  overflow-y: auto; /* Taşan içeriği kaydırmak için */
+  max-height: 300px;
+  /* Sonuç bölümünün yüksekliğini sınırlamak için */
+  overflow-y: auto;
+  /* Taşan içeriği kaydırmak için */
   /* border: 1px solid red; Kenarlık */
-  border-radius: 5px; /* Kenarları yuvarlatmak için */
-  background-color: #ffffff; /* Beyaz arka plan */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
-  margin-top: 5px; /* Giriş alanı ile arama sonuçları arasında boşluk */
+  border-radius: 5px;
+  /* Kenarları yuvarlatmak için */
+  background-color: #ffffff;
+  /* Beyaz arka plan */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Hafif bir gölge efekti */
+  margin-top: 5px;
+  /* Giriş alanı ile arama sonuçları arasında boşluk */
 }
 
 .search_result h4 {
-  color: black; /* Koyu gri yazı rengi */
-  padding: 5px; /* İçerik ile kenar arasına boşluk */
-  margin: 0; /* Varsayılan marjı kaldırıyoruz */
-  text-align: center; /* Metni sola yasla */
-  cursor: pointer; /* Tıklanabilir olduğunu belirtmek için imleci el şekline çevir */
+  color: black;
+  /* Koyu gri yazı rengi */
+  padding: 5px;
+  /* İçerik ile kenar arasına boşluk */
+  margin: 0;
+  /* Varsayılan marjı kaldırıyoruz */
+  text-align: center;
+  /* Metni sola yasla */
+  cursor: pointer;
+  /* Tıklanabilir olduğunu belirtmek için imleci el şekline çevir */
   transition: background-color 0.2s ease;
-  border-bottom: 1px solid grey; /* Arka plan renginin geçiş süresi */
+  border-bottom: 1px solid grey;
+  /* Arka plan renginin geçiş süresi */
 }
 
 .search_result h4:hover {
-  background-color: #f0f0f0; /* Hover geçiş efekti */
+  background-color: #f0f0f0;
+  /* Hover geçiş efekti */
 }
 
 .search_result h4:active {
-  background-color: #e0e0e0; /* Tıklanıldığında daha belirgin bir arka plan rengi */
+  background-color: #e0e0e0;
+  /* Tıklanıldığında daha belirgin bir arka plan rengi */
 }
 
-#sendWhatsAppButton{
+#sendWhatsAppButton {
   background-color: #218838;
   color: white;
   padding: 8px;
-  border:none;
+  border: none;
   cursor: pointer;
 
 }
@@ -735,6 +758,8 @@
     text-align: center;
     font-size: 13px;
   }
-}
 
-/*# sourceMappingURL=style.css.map */
+  .container .mb_footer {
+    display: flex;
+  }
+}
