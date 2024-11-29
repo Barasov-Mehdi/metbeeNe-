@@ -18,84 +18,33 @@
         href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Maven+Pro:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./sasFile/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Maven+Pro:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
     <title>Metbee</title>
 </head>
+<style>
+*{
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
 
-<!-- <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    .slider {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        height: 300px;
-        /* Slider yüksekliği */
-    }
-
-    .slider-wrapper {
-        display: flex;
-        animation: scroll 18s linear infinite;
-        /* Otomatik kaydırma */
-    }
-
-    .slide {
-        min-width: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .slide img {
-        width: 100%;
-        height: auto;
-        /* Resim boyutu */
-    }
-
-    .caption {
-        position: absolute;
-        bottom: 20px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        16.66% {
-            transform: translateX(0);
-        }
-
-        33.33% {
-            transform: translateX(-100%);
-        }
-
-        50% {
-            transform: translateX(-100%);
-        }
-
-        66.66% {
-            transform: translateX(-200%);
-        }
-
-        83.33% {
-            transform: translateX(-200%);
-        }
-
-        100% {
-            transform: translateX(-300%);
-        }
-    }
-</style> -->
+}
+</style>
 
 <body>
     <section class="container">
@@ -122,7 +71,7 @@
             <a href="">Əsas səhifə</a>
             <a href="">Haqqımızda</a>
             <a href="">Ünvan</a>
-            <a href="">Əlaqə</a>
+            <a href="">Yeniliklər</a>
         </nav>
 
         <section class="slider_box">
@@ -145,7 +94,7 @@
                 </div>
                 <div class="slide">
                     <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
-                    <p class="caption">Bəyannamə, ərizə formaları, arayış, hesabat və qərarlar</p>
+                    <p class="caption">Bəyannamə, ərizə formaları, hesabat və qərarlar</p>
                 </div>
                 <div class="slide">
                     <img src="./imgs/e20W8OSvnEDESjpzGfdF3SuVn5fzRPERQcmm939t.svg" alt="Image 4">
@@ -174,7 +123,7 @@
         </div>
 
         <section class="basket_card_box">
-            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #005b99;"></i>
+            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #021526;"></i>
             <section class="product_box">
             </section>
             <img class="card_pen" src="./imgs/pen.png" alt="pen">
@@ -192,13 +141,15 @@
         </footer>
 
         <section class="mb_footer">
-            <i class="fa-solid fa-bars open_mbBox"></i>
-            <section>
-                <i class="fa-regular fa-comment"></i>
-            </section>
+            <!-- <i class="fa-solid fa-bars open_mbBox"></i> -->
+            <!-- <i class="fa-regular fa-comment"></i> -->
+            <!-- <i class="fa-regular fa-newspaper"></i> -->
             <!-- <i class="fa-brands fa-whatsapp"></i> -->
-            <button id="toggleButton"><i class="fa-solid fa-share-nodes"></i></button>
-
+            <!-- <i class="fa-solid fa-share-nodes" id="toggleButton" style="background-color: transparent;"></i> -->
+            <img class="open_mbBox" src="./imgs/menu.png" alt="">
+            <img src="./imgs/message.png" alt="">
+            <img src="./imgs/gazet.png" style="background-color: transparent;" alt="">
+            <img id="toggleButton" style="background-color: transparent;" src="./imgs/contact.png" alt="">
         </section>
 
         <section class="menu_box">
@@ -222,7 +173,7 @@
     </section>
     <script src="./index.js"></script>
     <script>
-        
+
     </script>
 </body>
 

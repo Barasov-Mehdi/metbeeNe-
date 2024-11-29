@@ -23,7 +23,7 @@ nextButton.addEventListener('click', () => {
 setInterval(() => {
     currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
     updateImage();
-}, 3000); 
+}, 3000);
 
 const apiUrl = 'https://metbee-c9a5d6116dda.herokuapp.com/service/getAll';
 const productContainer = document.getElementById('productContainer');
@@ -34,7 +34,7 @@ const productNum = document.querySelector('.produc_num');
 const card_pen = document.querySelector('.card_pen');
 
 let products = [];
-let cart = []; 
+let cart = [];
 let cartCount = 0;
 
 // API'den tüm ürünleri al
@@ -42,6 +42,11 @@ async function fetchProducts() {
     const response = await fetch(apiUrl);
     products = await response.json();
     displayProducts(products); // Tüm ürünleri görüntüle
+}
+
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
 // Ürünleri görüntüle
@@ -64,7 +69,10 @@ function displayProducts(productList) {
                 <div class="product_description">
                     <h4>${product.description}</h4>
                 </div>
-                <i class="fa-solid fa-cart-shopping add-to-cart" data-product='${JSON.stringify(product)}'></i>
+                <div class='addBox'>
+                    <h6>${formatDate(product.createdAt)}</h6> <!-- Formatlanmış tarihi kullan -->
+                    <i class="fa-solid fa-cart-shopping add-to-cart" data-product='${JSON.stringify(product)}'></i>
+                </div>  
             </div>
         `;
 
@@ -156,6 +164,8 @@ searchInput.addEventListener('focus', () => {
 });
 
 function displaySingleProduct(product) {
+    const formattedDate = formatDate(product.createdAt); // Tarihi formatla
+
     productContainer.innerHTML = `
         <div class="product">
         <div class="product_img">
@@ -170,8 +180,10 @@ function displaySingleProduct(product) {
         <div class="product_description">
             <h4>${product.description}</h4>
         </div>
-        <i class="fa-solid fa-cart-shopping add-to-cart" data-product='${JSON.stringify(product)}'></i>
-           
+        <div class='addBox'>
+            <h6>${formattedDate}</h6>  <!-- Formatlanmış tarihi kullan -->
+            <i class="fa-solid fa-cart-shopping add-to-cart" data-product='${JSON.stringify(product)}'></i>
+        </div>           
         </div>
     `;
 
@@ -199,7 +211,6 @@ function addToCart(product) {
     displayCart();
 }
 
-// Sayfa yüklendiğinde olay dinleyici ekliyoruz
 document.addEventListener('DOMContentLoaded', function () {
     const sendMessageButton = document.getElementById('sendWhatsAppButton');
     sendMessageButton.addEventListener('click', sendWhatsAppMessage);
