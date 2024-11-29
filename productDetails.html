@@ -10,10 +10,32 @@
             font-family: 'Arial', sans-serif;
             background-color: #eef2f3;
             margin: 0;
-            padding: 20px;
+            padding: 0; /* Padding'i sıfırlama */
+        }
+
+        .back-button {
+            display: block;
+            width: 100%; /* Tam genişlik */
+            padding: 10px;
+            background-color: #f8f9fa;
+            text-align: start; /* Sol hizalama */
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            border-radius: 0;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e2e6ea;
+            transform: translateY(-2px); /* Hover efekti */
         }
 
         .product-detail-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             max-width: 900px;
             margin: auto;
             background-color: #ffffff;
@@ -22,6 +44,7 @@
             overflow: hidden; /* İçeriği dışarı taşmaktan korur */
             transition: transform 0.3s, box-shadow 0.3s;
             width: 100%;
+            margin-top: 10px; /* Üstte biraz boşluk bırakma */
         }
 
         .product-detail-container:hover {
@@ -38,15 +61,15 @@
         }
 
         .product-detail img {
-            max-width: 100%;
-            height: auto;
+            max-width: 80%; /* Resmin maksimum genişliği %80 */
+            height: auto; /* Yükseklik otomatik ayarlama */
             border-radius: 10px;
             margin-bottom: 20px;
             border: 1px solid #ddd; /* Hafif kenarlık */
         }
 
         .product-detail h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 10px 0;
             color: #333;
             font-weight: bold;
@@ -81,42 +104,45 @@
             transform: scale(1.05); /* Büyüse etkisi */
         }
 
-        .back-button {
-            display: inline-block;
-            margin: 15px 0;
-            padding: 10px 20px;
-            background-color: #f8f9fa;
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp yeşili */
+            color: white;
+            padding: 12px 25px;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
-            color: #333;
-            font-size: 1em;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .back-button:hover {
-            background-color: #e2e6ea;
-            transform: translateY(-2px); /* Hover efekti */
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Daha koyu yeşil */
+            transform: scale(1.05); 
         }
 
         @media (max-width: 600px) {
             .product-detail h2 {
                 font-size: 2em;
             }
-            .add-to-cart {
+            .add-to-cart, .whatsapp-button {
                 font-size: 1em;
                 padding: 10px 20px;
+                margin: 5px 0;
             }
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="product-detail-container">
-        <a href="index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Geri Dön</a>
         <div class="product-detail"></div>
+        <button class="whatsapp-button" id="whatsapp-button">Yönləndir</button>
     </div>
 
     <script>
         const productId = new URLSearchParams(window.location.search).get('id');
+        const currentUrl = window.location.href; // Mevcut sayfa URL'sini al
 
         if (!productId) {
             console.error('Ürün kimliği bulunamadı.');
@@ -146,12 +172,13 @@
                 <p>${product.info}</p>
                 <h4>${product.description}</h4>
             `;
-
-            const addToCartButton = document.querySelector('.add-to-cart');
-            addToCartButton.addEventListener('click', () => {
-                alert(`${product.name} sepete eklendi!`);
-            });
         }
+
+        document.getElementById('whatsapp-button').addEventListener('click', () => {
+            const message = `Merhaba, bu ürünü görmek istiyorum: ${currentUrl}`;
+            const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        });
 
         fetchProductDetails();
     </script>
