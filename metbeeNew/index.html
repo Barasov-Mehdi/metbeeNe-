@@ -26,24 +26,82 @@
     <title>Metbee</title>
 </head>
 <style>
-*{
-  font-family: "Roboto Flex", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "wdth" 100,
-    "GRAD" 0,
-    "XOPQ" 96,
-    "XTRA" 468,
-    "YOPQ" 79,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "YTLC" 514,
-    "YTUC" 712;
+    * {
+        font-family: "Roboto Flex", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings:
+            "slnt" 0,
+            "wdth" 100,
+            "GRAD" 0,
+            "XOPQ" 96,
+            "XTRA" 468,
+            "YOPQ" 79,
+            "YTAS" 750,
+            "YTDE" -203,
+            "YTFI" 738,
+            "YTLC" 514,
+            "YTUC" 712;
 
-}
+        box-sizing: border-box;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.7em;
+        line-height: 1.2;
+        color: #2c3e50;
+
+    }
+
+    .news-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        /* Düz beyaz arka plan */
+        border-radius: 10px;
+        /* Daha oval köşeler */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        /* Daha belirgin bir gölge */
+        transition: transform 0.3s, box-shadow 0.3s;
+        /* Hover efektleri için geçiş */
+        cursor: pointer;
+        /* İşaretçi değişimi */
+    }
+
+    .news-container:hover {
+        transform: scale(1.02);
+        /* Hover'da büyüme efekti */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .news-title {
+        font-size: 1em;
+        color: #2c3e50;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .news-summary {
+        color: #555;
+        margin-top: 10px;
+        line-height: 1.5;
+        /* Daha iyi okunabilirlik için satır yüksekliği */
+    }
+
+    small {
+        display: block;
+        margin-top: 15px;
+        color: #7f8c8d;
+        font-size: 0.9em;
+        /* Küçük yazı için daha küçük font boyutu */
+    }
+    .news-header-title{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 </style>
 
 <body>
@@ -70,8 +128,10 @@
         <nav class="navbar">
             <a href="">Əsas səhifə</a>
             <a href="">Haqqımızda</a>
-            <a href="">Ünvan</a>
-            <a href="">Yeniliklər</a>
+            <!-- <a href="">Ünvan</a> -->
+            <button id="scrollToFooter">Ünvan</button>
+            <a href="feedback.html">Bizdən soruş</a>
+            <a href="./news.html">Yeniliklər</a>
         </nav>
 
         <section class="slider_box">
@@ -93,12 +153,20 @@
                     <p class="caption">Kommersiya hüquqi şəxslərin onlayn qeydiyyatı</p>
                 </div>
                 <div class="slide">
+                    <img src="./imgs/jtsEdzk4iE3FKdihFD0NJR1zu26IUtRLhSwIa3RB.svg" alt="Image 5">
+                    <p class="caption">Hazır sənəd barədə məlumatın verilməsi</p>
+                </div>
+                <div class="slide">
                     <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
                     <p class="caption">Bəyannamə, ərizə formaları, hesabat və qərarlar</p>
                 </div>
                 <div class="slide">
                     <img src="./imgs/e20W8OSvnEDESjpzGfdF3SuVn5fzRPERQcmm939t.svg" alt="Image 4">
                     <p class="caption">Fiziki şəxslərin vergi uçotuna alınması</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
+                    <p class="caption">Bəyannamə, ərizə formaları, hesabat və qərarlar</p>
                 </div>
                 <div class="slide">
                     <img src="./imgs/jtsEdzk4iE3FKdihFD0NJR1zu26IUtRLhSwIa3RB.svg" alt="Image 5">
@@ -122,33 +190,32 @@
 
         </div>
 
+        <div class="news-container" id="newsContainer">
+        </div>
+
         <section class="basket_card_box">
-            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #021526;"></i>
+            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #0000fe;"></i>
             <section class="product_box">
             </section>
             <img class="card_pen" src="./imgs/pen.png" alt="pen">
             <button id="sendWhatsAppButton">Yönləndir</button>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.1934743956526!2d46.64161897521988!3d41.62994928091586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40464b03acda7711%3A0xea9b7613221da395!2sBazar%20Store!5e0!3m2!1str!2saz!4v1732646905880!5m2!1str!2saz"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <section class="footer_info">
-                <span>PMK Konsaltinq</span>
+                &copy; 2024 - Bütün hüqüqlar qorunur.
             </section>
         </footer>
 
         <section class="mb_footer">
-            <!-- <i class="fa-solid fa-bars open_mbBox"></i> -->
-            <!-- <i class="fa-regular fa-comment"></i> -->
-            <!-- <i class="fa-regular fa-newspaper"></i> -->
-            <!-- <i class="fa-brands fa-whatsapp"></i> -->
-            <!-- <i class="fa-solid fa-share-nodes" id="toggleButton" style="background-color: transparent;"></i> -->
+
             <img class="open_mbBox" src="./imgs/menu.png" alt="">
-            <img src="./imgs/message.png" alt="">
-            <img src="./imgs/gazet.png" style="background-color: transparent;" alt="">
+            <a href="./feedback.html"><img src="./imgs/message.png" alt=""></a>
+            <a href="./news.html"><img src="./imgs/gazet.png" style="background-color: transparent;" alt=""></a>
             <img id="toggleButton" style="background-color: transparent;" src="./imgs/contact.png" alt="">
         </section>
 
@@ -156,6 +223,11 @@
             <div class="cancel_mb">
                 <i class="fa-solid fa-xmark close_mbBox"></i>
             </div>
+
+            <section>
+                <a href="./feedback.html">Bizdən soruş</a>
+                <a href="./news.html">Yeniliklər</a>
+            </section>
 
         </section>
 
@@ -173,7 +245,47 @@
     </section>
     <script src="./index.js"></script>
     <script>
+        // API'den en yeni haberi almak için kullanılacak URL
+        fetch('https://metbee-81d77b1a1f7b.herokuapp.com/news/api')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ yanıtı düzgün değil: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // En yeni haberi almak için sıralıyoruz ve ilkini alıyoruz
+                const latestNews = data.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+                displayLatestNews(latestNews);
+            })
+            .catch(error => console.error('Haberleri almada hata:', error));
 
+        function displayLatestNews(news) {
+            const newsContainer = document.getElementById('newsContainer');
+
+            // HTML içeriği
+            newsContainer.innerHTML = `
+                <h1 class="news-header-title" style="font-size: 18px;">Ən son yeniliklər</h1>
+                <div class="news-title" onclick="redirectToNews()">${news.title}</div>
+                <div class="news-summary">${news.content.substring(0, 100)}...</div>
+                <small>Müəllif: ${news.author} | Tarix: ${new Date(news.date).toLocaleDateString()}</small>
+            `;
+
+            // Yönlendirme fonksiyonunu tanımla
+            newsContainer.querySelector('.news-container').onclick = function () {
+                redirectToNews(news.id);
+            };
+        }
+
+        function redirectToNews() {
+            window.location.href = './news.html';
+        }
+
+        // Düğmeye tıklama olayını dinleyen kod
+        document.getElementById('scrollToFooter').addEventListener('click', function () {
+            // Footer kısmına kaydırma
+            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 

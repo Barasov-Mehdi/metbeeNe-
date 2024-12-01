@@ -20,7 +20,7 @@
         header {
             background-color: rgba(44, 62, 80, 0.8);
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
             position: relative;
             z-index: 2;
@@ -57,7 +57,7 @@
         .filter-select {
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid white;
+            border: 1px solid #3498db;
             transition: border-color 0.3s;
         }
         .filter-select:focus {
@@ -121,7 +121,7 @@
         }
         @media (max-width: 600px) {
             header {
-                padding: 5px 15px;
+                padding: 15px;
             }
             h1 {
                 font-size: 2em;
@@ -143,7 +143,7 @@
     <div class="filter-container">
         <select class="filter-select" id="filterSelect" onchange="filterNews(this.value)">
             <option value="all">Yeni məlumatlar </option>
-            <!-- <option value="today">Bütün məlumatlar</option> -->
+            <option value="today">Bütün məlumatlar</option>
             <option value="week">Həftəlik məlumatlar</option>
             <option value="month">Aylıq məlumatlar</option>
         </select>

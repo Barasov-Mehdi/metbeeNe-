@@ -25,7 +25,7 @@ setInterval(() => {
     updateImage();
 }, 3000);
 
-const apiUrl = 'https://metbee-c9a5d6116dda.herokuapp.com/service/getAll';
+const apiUrl = 'https://metbee-81d77b1a1f7b.herokuapp.com/service/getAll';
 const productContainer = document.getElementById('productContainer');
 const searchInput = document.getElementById('searchInput');
 const searchResult = document.getElementById('searchResult');

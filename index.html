@@ -77,7 +77,7 @@
     }
 
     .news-title {
-        font-size: 1.2em;
+        font-size: 1em;
         color: #2c3e50;
         margin: 0;
         font-weight: bold;
@@ -96,9 +96,19 @@
         color: #7f8c8d;
         font-size: 0.9em;
         /* Küçük yazı için daha küçük font boyutu */
+        width: 100%;
+        text-align: start;
+    }
+
+    .news-header-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px 0;
     }
 </style>
-
 <body>
     <section class="container">
         <header class="header">
@@ -148,12 +158,20 @@
                     <p class="caption">Kommersiya hüquqi şəxslərin onlayn qeydiyyatı</p>
                 </div>
                 <div class="slide">
+                    <img src="./imgs/jtsEdzk4iE3FKdihFD0NJR1zu26IUtRLhSwIa3RB.svg" alt="Image 5">
+                    <p class="caption">Hazır sənəd barədə məlumatın verilməsi</p>
+                </div>
+                <div class="slide">
                     <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
                     <p class="caption">Bəyannamə, ərizə formaları, hesabat və qərarlar</p>
                 </div>
                 <div class="slide">
                     <img src="./imgs/e20W8OSvnEDESjpzGfdF3SuVn5fzRPERQcmm939t.svg" alt="Image 4">
                     <p class="caption">Fiziki şəxslərin vergi uçotuna alınması</p>
+                </div>
+                <div class="slide">
+                    <img src="./imgs/DKYdz3pLKkIME3tZfsStikDohguEPK1bQbFnBwAm.svg" alt="Image 3">
+                    <p class="caption">Bəyannamə, ərizə formaları, hesabat və qərarlar</p>
                 </div>
                 <div class="slide">
                     <img src="./imgs/jtsEdzk4iE3FKdihFD0NJR1zu26IUtRLhSwIa3RB.svg" alt="Image 5">
@@ -170,18 +188,19 @@
             <button data-category="Boşdur">Bütün xidmətlər</button>
             <button data-category="Vergi xidməti">Vergi xidməti</button>
             <button data-category="Mühasibat xidməti">Mühasibat xidməti</button>
-            <button data-category="Mətbəə və poliqrafiya">Mətbəə və poliqrafiya</button>
+            <button data-category="Mətbəə">Mətbəə</button>
+            <button data-category="Poliqrafiya">Poliqrafiya</button>
         </section>
 
         <div class="product-container" id="productContainer">
 
         </div>
 
-        <div class="news-container" id="newsContainer">
+        <div class="news-container" id="newsContainer" onclick="redirectToNews()">
         </div>
 
         <section class="basket_card_box">
-            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #021526;"></i>
+            <i onclick="cardShowHide()" class="fa-solid fa-xmark" style="color: white; background-color: #2c3e50;"></i>
             <section class="product_box">
             </section>
             <img class="card_pen" src="./imgs/pen.png" alt="pen">
@@ -250,15 +269,13 @@
         function displayLatestNews(news) {
             const newsContainer = document.getElementById('newsContainer');
 
-            // HTML içeriği
             newsContainer.innerHTML = `
-                <h1 style="font-size: 18px;">Yeniliklər</h1>
-                <div class="news-title" onclick="redirectToNews()">${news.title}</div>
+                <h1 class="news-header-title" style="font-size: 18px;">Ən son yeniliklər</h1>
+                <div class="news-title" >${news.title}</div>
                 <div class="news-summary">${news.content.substring(0, 100)}...</div>
                 <small>Müəllif: ${news.author} | Tarix: ${new Date(news.date).toLocaleDateString()}</small>
             `;
 
-            // Yönlendirme fonksiyonunu tanımla
             newsContainer.querySelector('.news-container').onclick = function () {
                 redirectToNews(news.id);
             };
